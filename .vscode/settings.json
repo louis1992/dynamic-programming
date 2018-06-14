@@ -2,6 +2,11 @@
     "files.associations": {
         "functional": "cpp",
         "array": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp"
     }
 }
