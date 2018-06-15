@@ -22,14 +22,14 @@ int main(int argc, char** argv) {
 void loadData(vector<int>& length, vector<int>& profit) {
     // TODO.
     ifstream inFile("data.txt");
-    string buf= "";
+    string buf;
     string data;
     string data_type = "";
     while (inFile >> buf) {
-        if (data_type == "length") {
+        if (data_type == "length" && buf != "profit") {
             length.push_back(atoi(buf.c_str()));
         }
-        else if (data_type == "profit") {
+        else if (data_type == "profit" && buf != "length") {
             profit.push_back(atoi(buf.c_str()));
         }
         if (buf == "length")
@@ -59,7 +59,7 @@ int cutRod(int length, vector<int>& profit) {
     if (length <= 0)
         return 0;
     
-    for (int i = 0; i < length; ++i)
+    for (int i = 0; i <= length; ++i)
         maxProfit = getMax(maxProfit, profit[i] + cutRod(length - i - 1, profit));
     return maxProfit;
 }
